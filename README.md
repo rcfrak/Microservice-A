@@ -43,7 +43,9 @@ Microservice:
             };
             
             app.get('/api/username', (req, res) => {
+                console.log(`Get request received.`)
                 const username = generateUsername();
+                console.log(`Username sent.`)
                 res.json({ username });
             });
             
