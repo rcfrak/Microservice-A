@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Username Generator</title>
+</head>
+<body>
+    
+    <h1>Username Generator</h1>
+    <button onclick="generateUsername()">Generate Username</button>
+    <p>Your username:</p>
+    <p id="username-display"></p>
+
+    <script>
+
+        async function generateUsername() {
+            
+            const response = await fetch('http://localhost:2133/api/username');{
+            const data = await response.json();
+            document.getElementById('username-display').textContent = data.username;
+        } 
+    }
+    
+    </script>
+</body>
+</html>
